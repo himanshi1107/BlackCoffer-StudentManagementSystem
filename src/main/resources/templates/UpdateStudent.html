@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card" style="background-color: rgba(128, 128, 192)">
+				<h1 class = "text-center" style="color: black; font-weight: 700; font-family: 'Times New Roman', Times, serif;"> Update Student </h1>
+				<div class = "card-body">
+					<form th:action="@{/students/{id} (id=${student.id})}" th:object = "${student}" method="POST">
+						<div class ="form-group">
+							<label style="font-size: 22px; font-weight: 600; color: black;"> Student First Name </label>
+							<input
+							type = "text"
+							name = "firstName"
+							th:field = "*{firstName}"
+							class = "form-control"
+							placeholder="Enter Student First Name" required
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label style="font-size: 22px; font-weight: 600; color: black;"> Student Last Name </label>
+							<input
+							type = "text"
+							name = "lastName"
+							th:field = "*{lastName}"
+							class = "form-control"
+							placeholder="Enter Student Last Name" required
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label style="font-size: 22px; font-weight: 600; color: black;"> Student Email </label>
+							<input
+							type = "text"
+							name = "email"
+							th:field = "*{email}"
+							class = "form-control"
+							placeholder="Enter Student Email" required
+							/>
+						</div>
+						
+						<div class = "box-footer">
+							<ul class="justify-content-center">
+							<button type="submit" class = "btn btn-success" style="font-size: 20px;">
+								Submit
+							</button>
+							</ul>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
